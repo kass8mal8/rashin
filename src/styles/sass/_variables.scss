@@ -1,0 +1,36 @@
+@font-face {
+    font-family: lato;
+    src: url(../../fonts/Lato-Regular.ttf);
+}
+
+$lato: lato;
+
+// colors
+$gray: gray;
+$black: rgb(100, 101, 105);
+$aqua: rgb(71, 211, 211);
+$dark-orange: rgb(231, 131, 37);
+$light-orange:rgb(243, 207, 89);
+$blue: rgb(16, 99, 85);
+
+
+// media queries
+@mixin responsive($breakpoint){
+    @if($breakpoint == 'mobile'){
+        @media screen and (max-width: '425px') {
+            @content
+        }
+    };
+
+    @if($breakpoint == 'tablet') {
+        @media screen and (min-width: '426px') and (max-width:'768px') {
+            @content
+        }
+    };
+
+    @if($breakpoint == 'desktop') {
+        @media screen and (min-width: '800px') {
+            @content
+        }
+    };
+}

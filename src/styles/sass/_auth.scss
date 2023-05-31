@@ -1,0 +1,9 @@
+.form{
+    border: 1px solid red;
+    width: 60%;
+
+    @include responsive(mobile){
+        width: 100%;
+        border
+    }
+}

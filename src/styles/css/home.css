@@ -1,0 +1,11 @@
+.home {
+  margin-top: 30px;
+  font-family: lato;
+}
+.home .btn-shop {
+  border-radius: 20px;
+  background-color: skyblue;
+  text-transform: lowercase;
+  padding: 8px;
+  width: 30%;
+}

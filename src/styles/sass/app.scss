@@ -1,0 +1,26 @@
+@import './navbar';
+@import './home';
+@import './auth';
+
+.container{
+    width: 83%;
+    transform: translateX( 10%);
+    font-family: lato;
+    margin-bottom: 20px;
+
+    .btn{
+        padding: 5px 20px;
+        box-shadow: none;
+        font-family: lato;
+        margin-top: -7px;
+        background: linear-gradient(to right, $light-orange, $dark-orange);
+        text-transform: capitalize;
+    }
+}
+
+@include responsive(mobile){
+    .container{
+        width: 90%;
+        transform: translateX(5%);
+    }
+}

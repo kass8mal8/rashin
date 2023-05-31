@@ -1,0 +1,67 @@
+@font-face {
+  font-family: lato;
+  src: url(../../fonts/Lato-Regular.ttf);
+}
+.navbar {
+  width: 100%;
+  padding-top: 10px;
+}
+.navbar .links {
+  float: right;
+}
+.navbar .links a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: rgb(100, 101, 105);
+  transition: 0.2s ease;
+}
+.navbar .links a:hover {
+  color: rgb(71, 211, 211);
+  transition: 0.2s ease;
+}
+.navbar .links .btn {
+  text-transform: capitalize;
+  border-radius: 40px;
+  padding: 5px 20px;
+  box-shadow: none;
+  font-family: lato;
+  margin-top: -7px;
+  background: linear-gradient(to right, rgb(243, 207, 89), rgb(231, 131, 37));
+}
+
+.home {
+  margin-top: 30px;
+  font-family: lato;
+}
+.home .btn-shop {
+  border-radius: 20px;
+  background-color: skyblue;
+  text-transform: lowercase;
+  padding: 8px;
+  width: 30%;
+}
+
+.form {
+  border: 1px solid red;
+  width: 60%;
+}
+@media screen and (max-width: 425px) {
+  .form {
+    width: 100%;
+    border: none;
+  }
+}
+
+.container {
+  width: 83%;
+  transform: translateX(10%);
+  font-family: lato;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 425px) {
+  .container {
+    width: 90%;
+    transform: translateX(5%);
+  }
+}
