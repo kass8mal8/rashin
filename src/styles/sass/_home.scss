@@ -1,13 +1,24 @@
 .home{
     margin-top: 30px;
     font-family: lato;
+    margin-top: -30px;
 
-    // .box{
-    //     border-radius: 40px;
-    //     // padding:5px;
-    //     color: white;
-    //     background:rgb(247, 216, 221);
-    // }
+    h2{
+        margin: 24px 0;
+        color: rgb(27, 27, 83);
+        font-size: 3rem;
+    }
+
+    .box{
+        border-radius: 40px;
+        padding-left:18px;
+        background:$pink;
+    }
+    
+    .paper{
+        // background-color: rgb(240, 240, 240);
+        width: 50%;
+    }
 
     .btn-shop{
         border-radius: 20px;
@@ -15,6 +26,25 @@
         text-transform: lowercase;
         padding: 8px;
         width: 30%;
+
+        &:hover{
+            background: skyblue;
+        }
+
+        @include responsive(mobile) {
+            width:100%;
+        }
+    }
+
+    @include responsive(mobile) {
+        //margin-top: -20px;
+        .paper{
+            width:100%;
+        }
+
+        h2{
+            font-size: 2rem;
+        }
     }
 
 }

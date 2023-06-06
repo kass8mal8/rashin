@@ -1,37 +1,64 @@
 @font-face {
   font-family: lato;
-  src: url(../../fonts/Lato-Regular.ttf);
+  src: url(../../fonts/Poppins-Regular.ttf);
 }
 .navbar {
   width: 100%;
   padding-top: 10px;
 }
+.navbar .nav-icon {
+  display: none;
+}
 .navbar .links {
   float: right;
 }
-.navbar .links a {
-  text-decoration: none;
-  text-transform: capitalize;
-  color: rgb(100, 101, 105);
-  transition: 0.2s ease;
-}
-.navbar .links a:hover {
-  color: rgb(71, 211, 211);
-  transition: 0.2s ease;
-}
 .navbar .links .btn {
-  text-transform: capitalize;
   border-radius: 40px;
-  padding: 5px 20px;
-  box-shadow: none;
-  font-family: lato;
   margin-top: -7px;
-  background: linear-gradient(to right, rgb(243, 207, 89), rgb(231, 131, 37));
+}
+@media screen and (max-width: 425px) {
+  .navbar .links {
+    display: none;
+  }
+}
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  .navbar .btn-drawer {
+    display: none;
+  }
+}
+
+.sidebar .links a {
+  font-size: 18px;
+  margin: 10px 0;
+}
+.sidebar .links .btn {
+  border-radius: 40px;
+  text-transform: capitalize;
+  font-family: lato;
+  background: transparent;
+  color: gray;
+}
+.sidebar .links .nav-icon {
+  display: block;
 }
 
 .home {
   margin-top: 30px;
   font-family: lato;
+  margin-top: -30px;
+}
+.home h2 {
+  margin: 24px 0;
+  color: rgb(27, 27, 83);
+  font-size: 3rem;
+}
+.home .box {
+  border-radius: 40px;
+  padding-left: 18px;
+  background: rgb(247, 216, 221);
+}
+.home .paper {
+  width: 50%;
 }
 .home .btn-shop {
   border-radius: 20px;
@@ -40,28 +67,80 @@
   padding: 8px;
   width: 30%;
 }
-
-.form {
-  border: 1px solid red;
-  width: 60%;
+.home .btn-shop:hover {
+  background: skyblue;
 }
 @media screen and (max-width: 425px) {
-  .form {
+  .home .btn-shop {
     width: 100%;
-    border: none;
+  }
+}
+@media screen and (max-width: 425px) {
+  .home .paper {
+    width: 100%;
+  }
+  .home h2 {
+    font-size: 2rem;
   }
 }
 
+.form {
+  width: 100%;
+  font-family: lato;
+  margin-top: 30px;
+}
+
+.input {
+  font-family: lato;
+}
+
+@media screen and (max-width: 425px) {
+  .form {
+    width: 95%;
+  }
+  .img {
+    margin-left: 20px;
+    width: 90%;
+  }
+}
+@font-face {
+  font-family: lato;
+  src: url(../../fonts/Poppins-Regular.ttf);
+}
 .container {
   width: 83%;
   transform: translateX(10%);
   font-family: lato;
   margin-bottom: 20px;
 }
+.container .btn {
+  padding: 5px 20px;
+  box-shadow: none;
+  background: linear-gradient(to right, rgb(243, 207, 89), rgb(231, 131, 37));
+  text-transform: capitalize;
+}
+.container p {
+  color: gray;
+  display: flex;
+  flex-grow: 1;
+  align-items: start;
+}
+
+a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: rgb(100, 101, 105);
+  transition: 0.2s ease;
+  font-family: lato;
+}
+a:hover {
+  color: rgb(71, 211, 211);
+  transition: 0.2s ease;
+}
 
 @media screen and (max-width: 425px) {
   .container {
-    width: 90%;
-    transform: translateX(5%);
+    width: 92%;
+    transform: translateX(7%);
   }
 }

@@ -15,18 +15,19 @@ const usePost = (url) => {
                     'Content-Type': 'application/json',
                 }
             })
-            const token = await res.json()
-            setData(token)
+            const response = await res.json()
+            setData(response)
 
-        } catch (error) {
+        } 
+        catch (error) {
             setError(error.message)
-        } finally {
+        } 
+        finally {
             setLoading(false)
         }
     }
 
-    useEffect(()=> { post() }, [])
-    // useEffect(() => {}, [data])
+    useEffect(()=> { post() }, [url])
     return({ post, data, loading, error })
 
 }

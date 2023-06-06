@@ -4,26 +4,50 @@
     width:100%;
     padding-top: 10px;
 
+    .nav-icon {
+        display: none;
+    }
+
     .links{
         float: right;
         // margin-top: 5px;
 
-        a{
-            text-decoration: none;
-            text-transform: capitalize;
-            color:$black;
-            transition: .2s ease;
+        .btn{
+            border-radius: 40px;
+            margin-top: -7px;  
+        }
 
-            &:hover{
-                color: $aqua;
-                transition: .2s ease;
-            }
+        @include responsive(mobile) {
+            display: none;
+        }
+    }
+
+    @include responsive(tablet) {
+        .btn-drawer{
+            display: none;
+        }
+        
+    }
+ 
+}
+
+.sidebar{
+    .links{
+        a{
+            font-size: 18px;
+            margin: 10px 0;
         }
 
         .btn{
-            
             border-radius: 40px;
-            
+            text-transform: capitalize;
+            font-family: $lato;
+            background: transparent;
+            color: $gray;
+        }
+
+        .nav-icon {
+            display: block;
         }
     }
 }
