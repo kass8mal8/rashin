@@ -16,6 +16,7 @@ const usePost = (url) => {
                 }
             })
             const response = await res.json()
+            console.log(response)
             setData(response)
 
         } 
@@ -27,7 +28,10 @@ const usePost = (url) => {
         }
     }
 
-    useEffect(()=> { post() }, [url])
+    useEffect(()=> { 
+        post() 
+    }, [url])
+    
     return({ post, data, loading, error })
 
 }

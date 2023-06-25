@@ -1,4 +1,4 @@
-import { Stack, TextField, InputAdornment, Button, Grid, } from '@mui/material'
+import { Stack, TextField, InputAdornment, Button, Grid, Divider } from '@mui/material'
 import { useState } from 'react'
 import signup from '../images/signup-illustration.jpeg'
 import usePost from '../hooks/usePost'
@@ -11,7 +11,8 @@ const Signup = ({open, setOpen, handleClose, setIsAuthenticated}) => {
     const viewport = document.body.clientWidth
     const [ clicked, setClicked ] = useState(false)
     const url = 'http://localhost:5000/auth/signup'
-    const {post, error, loading, data} = usePost(url)
+    const { post, error, loading, data } = usePost(url)
+
 
     const cookies = new Cookies()
     const options = {
@@ -28,10 +29,18 @@ const Signup = ({open, setOpen, handleClose, setIsAuthenticated}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        post(userData)
-        data && setIsAuthenticated(true)
         setOpen(true)
-        cookies.set('jwt', data !== null && data.token, options)
+        
+        try {
+            post(userData)
+            if(data !== null) {
+                setIsAuthenticated(true)
+                cookies.set('jwt', data.token, options)
+                console.log(data)
+            }
+        } catch (error) {
+            console.log(error.message)
+        }
     }
     
     return (  
@@ -50,7 +59,7 @@ const Signup = ({open, setOpen, handleClose, setIsAuthenticated}) => {
                     /> 
 
                     <Button startIcon={ <Google /> } variant='contained' my={2} sx={{textTransform: 'capitalize', width: '100%', marginBlock: '16px'}} >Continue with Google</Button>
-                    <p style={{textAlign:'center', marginTop: '-5px'}}>OR</p>
+                    <Divider>OR</Divider>
                     <Stack direction='row' spacing={1.5} >
                         <TextField 
                             label='first name' 

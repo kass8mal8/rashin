@@ -4,9 +4,10 @@ import NavBar from './header/NavBar';
 import { Routes, Route } from 'react-router'
 import Home from './Home';
 import Signup from './forms/Signup';
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
 import Signin from './forms/Signin';
 import useFetch from './hooks/useFetch';
+import Collection from './Collection';
 
 export const userContext = createContext()
 
@@ -22,18 +23,17 @@ const App = () => {
 	}
 
 	const { data: users, loading, error } = useFetch(url)
-    //users && console.log(users)
 
-    const cookies = document.cookie.split(';');
-    const jwtCookie = cookies.find(cookie => cookie.trim().startsWith('jwt='));
-    
-    if(users) {
-        if(jwtCookie) {
-            const token = jwtCookie.split('=')[1];
-            const elem = users.filter( user => user._id === token)
-            setUser(elem)
-        }
-    }
+	useEffect(() => {
+		const cookies = document.cookie.split(';');
+		const jwtCookie = cookies.find(cookie => cookie.trim().startsWith('jwt='));
+	  
+		if (users && jwtCookie) {
+		  const token = jwtCookie.split('=')[1];
+		  setUser(users.filter(user => user._id === token));
+		}
+	}, [users]);
+	  
 
   return (
 	<userContext.Provider value={user} >
@@ -46,7 +46,12 @@ const App = () => {
 						open={open}
 						setOpen={setOpen}
 						handleClose={handleClose} />} />
-					<Route path='/signin' element={<Signin  setIsAuthenticated={setIsAuthenticated} />} />
+					<Route 
+						path='/signin' 
+						element={<Signin setIsAuthenticated={setIsAuthenticated} />}
+					/>
+					<Route path='/collections' element={<Collection />} />
+
 				</Routes>
 			</Stack>
 	</userContext.Provider>

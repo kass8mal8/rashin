@@ -1,15 +1,16 @@
 import { 
     Grid, 
     Button,   
-    Stack 
+    Stack,
 } from "@mui/material";
 
 import {
     TimerOutlined, 
-    ShoppingBasket
+    ShoppingBasket,
+    CheckCircle
 } from '@mui/icons-material';
 
-import hero from './images/hero.png';
+import hero from './images/hero.jpg';
 // import hero from './images/shopping-illustration.jpeg'
 
 const Hero = () => {
@@ -35,8 +36,12 @@ const Hero = () => {
                     <Button startIcon = {<ShoppingBasket />} variant="contained" className='btn-shop' >Shop now</Button>
                 </Stack>
             </Grid>
-            <Grid item xs={10.5} sm={4} mt={5} marginLeft={2}>
-                <img src={hero} alt='shopping-illustration' width='130%'/>
+            <Grid item xs={12} sm={4} mt={5} >
+                <Stack className='checks' direction='row' spacing={1.5}>
+                    <CheckCircle sx={{color:"orange"}} />
+                    <p>Delivery Complete</p>
+                </Stack>
+                <img src={hero} alt='shopping-illustration' width='100%'/>
             </Grid>
             
         </Grid>

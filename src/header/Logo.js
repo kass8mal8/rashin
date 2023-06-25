@@ -7,7 +7,7 @@ const Logo = () => {
     }
 
     return ( 
-        <Stack direction='row' spacing={2} sx={{display: 'flex', flexGrow: 1}}>
+        <Stack direction='row' spacing={2} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', borderBottomWidth: '1px', borderColor: 'gray' }}>
             <img src={logo} width='100px' alt='logo' style={img} />
         </Stack>
      );

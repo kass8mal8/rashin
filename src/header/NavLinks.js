@@ -2,6 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Button, Stack, IconButton } from '@mui/material'
 import { Category, Home, PhoneAndroid } from "@mui/icons-material"
 import { useContext } from 'react'
+import { Login } from "@mui/icons-material"
 
 const NavLinks = () => {
     const navigate = useNavigate()
@@ -20,7 +21,11 @@ const NavLinks = () => {
             <Stack direction='row'>
                 <IconButton className='nav-icon'> <PhoneAndroid /> </IconButton>
                 <Link to='/contact'>contact</Link>
-            </Stack>     
+            </Stack> 
+            <Stack direction='row'>
+                <IconButton className='nav-icon'> <Login /> </IconButton>
+                <Link to="/signin">signin</Link>
+            </Stack>    
             <Button 
                 variant='contained' 
                 className='btn' 

@@ -36,6 +36,15 @@
         }
     }
 
+    .checks {
+        background: whitesmoke;
+        padding: 5px;
+        border: 1px solid whitesmoke;
+        border-radius: 5px;
+        width: 200px;
+        color: white;
+    }
+
     @include responsive(mobile) {
         //margin-top: -20px;
         .paper{
